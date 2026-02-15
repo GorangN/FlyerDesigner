@@ -1,9 +1,9 @@
 /* ══════════════════════════════════════════════════
-   Flyer Template – Basis-Styles
-   Wird von template-engine.js dynamisch ergänzt
+   Flyer Template – Base Styles
+   Dynamically extended by template-engine.js
    ══════════════════════════════════════════════════ */
 
-/* Print-Farben erzwingen */
+/* Force print colors */
 * {
     -webkit-print-color-adjust: exact !important;
     print-color-adjust: exact !important;

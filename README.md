@@ -57,6 +57,20 @@ graph LR
 
 ### 🎨 Colors
 
+Define your brand's color palette here. The engine uses these values to generate CSS variables.
+
+| Key | Description |
+| --- | ----------- |
+| `primary` | Main brand color (used for accents, bold text, buttons) |
+| `primaryText` | Text color on top of primary backgrounds (usually white or black) |
+| `secondary` | Secondary brand color (used for dark sections, footers) |
+| `secondaryText` | Text color on top of secondary backgrounds |
+| `background` | Page background color (usually white or light gray) |
+| `textMain` | Standard body text color |
+| `textMuted` | Less important text |
+| `accent` | Highlight color (often same as primary) |
+| `border` | Border color for panels/cards |
+
 ```json
 "colors": {
     "primary": "#FFC700",
@@ -73,10 +87,17 @@ graph LR
 
 ### 📐 Format & Orientation
 
+Control the physical dimensions of the flyer.
+
+| Key | Options | Description |
+| --- | ------- | ----------- |
+| `active` | `"A5"`, `"A6"` | Sets the paper size. |
+| `orientation` | `"portrait"`, `"landscape"` | Rotates the page dimensions. |
+
 ```json
 "format": {
     "active": "A6",
-    "orientation": "hochformat",
+    "orientation": "portrait",
     "options": {
         "A5": { "width": "148mm", "height": "210mm" },
         "A6": { "width": "105mm", "height": "148mm" }
@@ -86,20 +107,36 @@ graph LR
 
 ### 📄 Layout
 
+Choose how the panels are arranged.
+
+| Layout | Panels | Description |
+| ------ | ------ | ----------- |
+| `"simple"` | 2 | Front & Back (e.g. Greeting Card) |
+| `"2-fold"` | 4 | 1 Fold (Booklet style) |
+| `"3-fold"` | 6 | 2 Folds (Tri-fold / Wickelfalz) |
+
 ```json
 "layout": {
-    "active": "einfach",
+    "active": "simple",
     "options": {
-        "einfach":  { "label": "Einfache Grußkarte", "panels": 2 },
-        "2-falz":   { "label": "2-Falz",             "panels": 4 },
-        "3-falz":   { "label": "3-Falz (Wickelfalz)", "panels": 6 }
+        "simple":  { "label": "Simple Greeting Card", "panels": 2 },
+        "2-fold":   { "label": "2-Fold",             "panels": 4 },
+        "3-fold":   { "label": "3-Fold (Tri-Fold)", "panels": 6 }
     }
 }
 ```
 
 ### 📝 Panel Content
 
-Each panel supports `heading`, `subheading`, `body` (HTML), and `footer`:
+Content for each panel is defined here. The number of required panels depends on your selected `layout`.
+
+| Field | Description |
+| ----- | ----------- |
+| `role` | Helpful label for AI (e.g. "cover", "back", "inner-left") |
+| `heading` | Large, bold headline text |
+| `subheading` | Small, uppercase tagline above the headline |
+| `body` | Main content. **Accepts HTML**. Use utility classes like `.card`, `.big-number`, etc. |
+| `footer` | Small text at the bottom of the panel |
 
 ```json
 "panels": {
@@ -107,7 +144,7 @@ Each panel supports `heading`, `subheading`, `body` (HTML), and `footer`:
         "role": "cover",
         "heading": "Your Headline",
         "subheading": "TAGLINE",
-        "body": "<p>Rich HTML content here</p>",
+        "body": "<p>Rich HTML content here. Use <span class='text-primary'>utility classes</span>.</p>",
         "footer": "© 2026 Your Company"
     }
 }
@@ -149,8 +186,8 @@ This template is designed for AI-powered flyer generation:
 ### Example Prompt
 
 ```text
-Create a flyer for "Café Sonnenschein" using the FlyerDesigner template.
-Format: A5, Layout: 2-falz.
+Create a flyer for "Café Sunshine" using the FlyerDesigner template.
+Format: A5, Layout: 2-fold.
 Primary color: #2D5016 (forest green), Secondary: #F5E6D3 (cream).
 Fill all 4 panels with café menu highlights, opening hours, and a welcome message.
 Update flyer-config.json accordingly.
@@ -161,7 +198,7 @@ Update flyer-config.json accordingly.
 ## 🖨️ Printing
 
 1. Open `template.html` in browser
-2. Press `Ctrl+P` or click **FLYER DRUCKEN**
+2. Press `Ctrl+P` or click **PRINT FLYER**
 3. Set margins to **None**
 4. Enable **Background graphics**
 5. Print or save as PDF

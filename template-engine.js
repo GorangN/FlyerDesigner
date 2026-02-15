@@ -1,7 +1,7 @@
 /**
  * Flyer Template Engine
- * Liest flyer-config.json und baut Spreads + Panels dynamisch auf.
- * Inspiriert von der Avesa_Flyer-Architektur (spread-basiert mit Falzlinien).
+ * Reads flyer-config.json and dynamically builds spreads + panels.
+ * Inspired by Avesa_Flyer architecture (spread-based with fold lines).
  */
 
 class FlyerEngine {
@@ -19,14 +19,14 @@ class FlyerEngine {
         this.updateInfoHeader();
     }
 
-    /* ── Config laden ──────────────────────────────────── */
+    /* ── Load Config ──────────────────────────────────── */
     async loadConfig() {
         const res = await fetch(this.configPath);
-        if (!res.ok) throw new Error(`Config nicht gefunden: ${this.configPath}`);
+        if (!res.ok) throw new Error(`Config not found: ${this.configPath}`);
         this.config = await res.json();
     }
 
-    /* ── Farben als CSS-Variablen setzen ───────────────── */
+    /* ── Set Colors as CSS Variables ───────────────── */
     applyColors() {
         const root = document.documentElement;
         const c = this.config.colors;
@@ -41,30 +41,31 @@ class FlyerEngine {
         root.style.setProperty('--color-border', c.border);
     }
 
-    /* ── Fonts als CSS-Variablen setzen ────────────────── */
+    /* ── Set Fonts as CSS Variables ────────────────── */
     applyFonts() {
         const root = document.documentElement;
         const f = this.config.fonts;
         root.style.setProperty('--font-heading', f.heading);
         root.style.setProperty('--font-body', f.body);
         root.style.setProperty('--font-mono', f.mono);
-        // Tailwind-kompatible Font-Namen (ohne Fallback)
+        // Tailwind-compatible font names (without fallback)
         root.style.setProperty('--font-heading-name', f.heading.split(',')[0].replace(/'/g, '').trim());
         root.style.setProperty('--font-body-name', f.body.split(',')[0].replace(/'/g, '').trim());
         root.style.setProperty('--font-mono-name', f.mono.split(',')[0].replace(/'/g, '').trim());
     }
 
-    /* ── Seitenformat (A5 / A6) + Orientierung setzen ─── */
+    /* ── Set Page Format (A5 / A6) + Orientation ─── */
     applyFormat() {
         const fmt = this.config.format;
         const dims = fmt.options[fmt.active];
         if (!dims) {
-            console.warn(`Format "${fmt.active}" nicht gefunden, nutze A6.`);
+            console.warn(`Format "${fmt.active}" not found, using A6.`);
             return;
         }
 
-        // Querformat: Breite und Höhe tauschen
-        const isLandscape = fmt.orientation === 'querformat';
+        // Landscape: swap width and height
+        // "querformat" (German) or "landscape" (English)
+        const isLandscape = fmt.orientation === 'landscape' || fmt.orientation === 'querformat';
         const w = isLandscape ? dims.height : dims.width;
         const h = isLandscape ? dims.width : dims.height;
 
@@ -72,14 +73,14 @@ class FlyerEngine {
         root.style.setProperty('--page-width', w);
         root.style.setProperty('--page-height', h);
 
-        // Dynamisches @page-Stylesheet
+        // Dynamic @page stylesheet
         const pageStyle = document.getElementById('dynamic-page-style');
         if (pageStyle) {
             pageStyle.textContent = `@page { size: ${w} ${h}; margin: 0; }`;
         }
     }
 
-    /* ── Spreads + Panels erzeugen ─────────────────────── */
+    /* ── Build Spreads + Panels ─────────────────────── */
     buildSpreads() {
         const container = document.getElementById('flyer-container');
         if (!container) return;
@@ -87,7 +88,7 @@ class FlyerEngine {
         const layoutKey = this.config.layout.active;
         const layoutDef = this.config.layout.options[layoutKey];
         if (!layoutDef) {
-            console.warn(`Layout "${layoutKey}" nicht gefunden.`);
+            console.warn(`Layout "${layoutKey}" not found.`);
             return;
         }
 
@@ -96,17 +97,17 @@ class FlyerEngine {
         const dims = fmt.options[fmt.active];
         container.innerHTML = '';
 
-        // Spreads aufbauen: Panels pro Spread gruppieren
+        // Build spreads: group panels per spread
         const spreads = this.groupPanelsIntoSpreads(panelCount, layoutKey);
 
         spreads.forEach((spreadPanels, spreadIdx) => {
-            // Spread-Label
+            // Spread Label
             const label = document.createElement('div');
             label.className = 'section-label mb-6 bg-primary/10 text-primary px-4 py-1 rounded-full text-xs font-black tracking-widest uppercase italic text-center no-print';
             label.textContent = spreadPanels.label;
             container.appendChild(label);
 
-            // Spread-Container
+            // Spread Container
             const spreadDiv = document.createElement('div');
             const spreadWidthMM = parseFloat(dims.width) * spreadPanels.panels.length;
             spreadDiv.className = 'spread mx-auto mb-12';
@@ -116,12 +117,12 @@ class FlyerEngine {
                 spreadDiv.style.flexDirection = 'row-reverse';
             }
 
-            // Panels im Spread
+            // Panels in Spread
             spreadPanels.panels.forEach((panelIdx, posInSpread) => {
                 const panelData = this.config.panels[String(panelIdx)] || {};
                 const panelEl = this.createPanel(panelIdx, panelData);
 
-                // Falzlinie zwischen Panels (nicht am letzten)
+                // Fold line between panels (not on the last one)
                 if (posInSpread < spreadPanels.panels.length - 1) {
                     const foldLine = document.createElement('div');
                     foldLine.className = 'fold-line';
@@ -135,37 +136,40 @@ class FlyerEngine {
         });
     }
 
-    /* ── Panels in Spreads gruppieren ──────────────────── */
+    /* ── Group Panels into Spreads ──────────────────── */
     groupPanelsIntoSpreads(panelCount, layoutKey) {
         switch (layoutKey) {
-            case 'einfach':
-                // 2 Panels = 1 Spread (Vorderseite links, Rückseite rechts)
+            case 'simple':
+            case 'einfach': // Backward compatibility
+                // 2 Panels = 1 Spread (Front Left, Back Right)
                 return [
-                    { label: 'Grußkarte – Außenseite', panels: [1, 2], reverse: false }
+                    { label: 'Greeting Card – Outside', panels: [1, 2], reverse: false }
                 ];
 
+            case '2-fold':
             case '2-falz':
-                // 4 Panels = 2 Spreads (Außen + Innen)
+                // 4 Panels = 2 Spreads (Outside + Inside)
                 return [
-                    { label: 'Seite 1: Außenseite', panels: [1, 2], reverse: true },
-                    { label: 'Seite 2: Innenseite', panels: [3, 4], reverse: false }
+                    { label: 'Side 1: Outside', panels: [1, 2], reverse: true },
+                    { label: 'Side 2: Inside', panels: [3, 4], reverse: false }
                 ];
 
+            case '3-fold':
             case '3-falz':
-                // 6 Panels = 2 Spreads à 3 Panels (Außen + Innen)
+                // 6 Panels = 2 Spreads à 3 Panels (Outside + Inside)
                 return [
-                    { label: 'Seite 1: Außenseite', panels: [1, 2, 3], reverse: true },
-                    { label: 'Seite 2: Innenseite', panels: [4, 5, 6], reverse: false }
+                    { label: 'Side 1: Outside', panels: [1, 2, 3], reverse: true },
+                    { label: 'Side 2: Inside', panels: [4, 5, 6], reverse: false }
                 ];
 
             default:
-                // Fallback: alle in einen Spread
+                // Fallback: all in one spread
                 const allPanels = Array.from({ length: panelCount }, (_, i) => i + 1);
-                return [{ label: 'Alle Panels', panels: allPanels, reverse: false }];
+                return [{ label: 'All Panels', panels: allPanels, reverse: false }];
         }
     }
 
-    /* ── Einzelnes Panel erstellen ─────────────────────── */
+    /* ── Create Single Panel ─────────────────────── */
     createPanel(index, data) {
         const panel = document.createElement('div');
         panel.className = 'panel';
@@ -199,7 +203,7 @@ class FlyerEngine {
         if (data.body) {
             main.innerHTML = data.body;
         } else {
-            // Platzhalter
+            // Placeholder
             const ph = document.createElement('div');
             ph.className = 'border-2 border-dashed border-slate-200 rounded-2xl p-4 text-center text-slate-300 text-xs';
             ph.innerHTML = `<i class="ti ti-layout text-2xl mb-1 block"></i>Panel ${index}<br><span class="text-[9px]">${data.role || 'content'}</span>`;
@@ -221,7 +225,7 @@ class FlyerEngine {
         return panel;
     }
 
-    /* ── Info-Header aktualisieren ─────────────────────── */
+    /* ── Update Info Header ─────────────────────── */
     updateInfoHeader() {
         const info = document.getElementById('flyer-info');
         if (!info) return;
@@ -236,19 +240,19 @@ class FlyerEngine {
         Format: <strong>${fmt}</strong> · Layout: <strong>${layout?.label || '–'}</strong> · ${layout?.panels || 0} Panels
       </p>
       <p class="text-slate-400 text-xs italic mt-1">
-        <kbd class="px-2 py-0.5 bg-white border rounded text-[10px] font-mono">Ctrl+P</kbd> zum Drucken
+        <kbd class="px-2 py-0.5 bg-white border rounded text-[10px] font-mono">Ctrl+P</kbd> to Print
       </p>
     `;
     }
 }
 
-/* ── Initialisierung ─────────────────────────────────── */
+/* ── Init ─────────────────────────────────── */
 document.addEventListener('DOMContentLoaded', () => {
     const engine = new FlyerEngine();
     engine.init().catch(err => {
-        console.error('FlyerEngine Fehler:', err);
+        console.error('FlyerEngine Error:', err);
         document.body.innerHTML = `<div style="padding:2rem;color:red;font-family:monospace;">
-      <h2>⚠ Fehler beim Laden der Konfiguration</h2>
+      <h2>⚠ Error loading configuration</h2>
       <pre>${err.message}</pre>
     </div>`;
     });

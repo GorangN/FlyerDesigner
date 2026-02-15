@@ -1,7 +1,7 @@
 {
   "meta": {
     "version": "1.0",
-    "description": "Flyer Template Konfiguration – wird von template-engine.js gelesen"
+    "description": "Flyer Template Configuration – read by template-engine.js"
   },
   "colors": {
     "primary": "#FFC700",
@@ -16,7 +16,7 @@
   },
   "format": {
     "active": "A6",
-    "orientation": "hochformat",
+    "orientation": "portrait",
     "options": {
       "A5": {
         "width": "148mm",
@@ -29,22 +29,22 @@
     }
   },
   "layout": {
-    "active": "einfach",
+    "active": "simple",
     "options": {
-      "einfach": {
-        "label": "Einfache Grußkarte",
+      "simple": {
+        "label": "Simple Greeting Card",
         "panels": 2,
-        "description": "Vorderseite + Rückseite"
+        "description": "Front + Back"
       },
-      "2-falz": {
-        "label": "2-Falz",
+      "2-fold": {
+        "label": "2-Fold",
         "panels": 4,
-        "description": "4 Panels, einmal gefaltet"
+        "description": "4 Panels, folded once"
       },
-      "3-falz": {
-        "label": "3-Falz (Wickelfalz)",
+      "3-fold": {
+        "label": "3-Fold (Tri-Fold)",
         "panels": 6,
-        "description": "6 Panels, zweimal gefaltet"
+        "description": "6 Panels, folded twice"
       }
     }
   },
