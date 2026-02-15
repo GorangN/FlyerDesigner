@@ -1,4 +1,5 @@
-# 🎨 Flyer Designer – AI-Ready Template System
+<!-- markdownlint-disable MD033 -->
+# <img src="https://cdn.jsdelivr.net/npm/@tabler/icons/icons/palette.svg" width="32" height="32" align="top" alt="Palette Icon" /> Flyer Designer – AI-Ready Template System
 
 > **Fork this project** and create stunning print flyers powered by AI. Just edit one JSON file — colors, format, layout — and let AI fill in the content.
 
@@ -6,18 +7,18 @@
 
 ---
 
-## ✨ Features
+## <img src="https://cdn.jsdelivr.net/npm/@tabler/icons/icons/sparkles.svg" width="24" height="24" align="top" alt="Sparkles Icon" /> Features
 
-- 🎨 **JSON-driven design** — Colors, fonts, branding all in one config file
-- 📐 **Multiple formats** — A5 (148×210mm) and A6 (105×148mm), portrait or landscape
-- 📄 **Flexible layouts** — Simple greeting card, 2-fold (4 panels), 3-fold (6 panels)
-- 🖨️ **Print-ready** — `Ctrl+P` or click the print button, WYSIWYG output
-- 🤖 **AI-ready** — Empty template with placeholders, designed for AI content injection
-- 📏 **Spread view** — Panels displayed side-by-side like the physical sheet, with fold lines
+- <img src="https://cdn.jsdelivr.net/npm/@tabler/icons/icons/palette.svg" width="20" height="20" align="top" alt="Palette Icon" /> **JSON-driven design** — Colors, fonts, branding all in one config file
+- <img src="https://cdn.jsdelivr.net/npm/@tabler/icons/icons/ruler.svg" width="20" height="20" align="top" alt="Ruler Icon" /> **Multiple formats** — A5 (148×210mm) and A6 (105×148mm), portrait or landscape
+- <img src="https://cdn.jsdelivr.net/npm/@tabler/icons/icons/file.svg" width="20" height="20" align="top" alt="File Icon" /> **Flexible layouts** — Simple greeting card, 2-fold (4 panels), 3-fold (6 panels)
+- <img src="https://cdn.jsdelivr.net/npm/@tabler/icons/icons/printer.svg" width="20" height="20" align="top" alt="Printer Icon" /> **Print-ready** — `Ctrl+P` or click the print button, WYSIWYG output
+- <img src="https://cdn.jsdelivr.net/npm/@tabler/icons/icons/robot.svg" width="20" height="20" align="top" alt="Robot Icon" /> **AI-ready** — Empty template with placeholders, designed for AI content injection
+- <img src="https://cdn.jsdelivr.net/npm/@tabler/icons/icons/ruler.svg" width="20" height="20" align="top" alt="Ruler Icon" /> **Spread view** — Panels displayed side-by-side like the physical sheet, with fold lines
 
 ---
 
-## 🚀 Quick Start
+## <img src="https://cdn.jsdelivr.net/npm/@tabler/icons/icons/rocket.svg" width="24" height="24" align="top" alt="Rocket Icon" /> Quick Start
 
 ```bash
 # 1. Fork & clone
@@ -34,7 +35,7 @@ Open `http://localhost:3000/template.html` and you'll see your empty flyer templ
 
 ---
 
-## 🏗️ Architecture
+## <img src="https://cdn.jsdelivr.net/npm/@tabler/icons/icons/sitemap.svg" width="24" height="24" align="top" alt="Sitemap Icon" /> Architecture
 
 ```mermaid
 graph LR
@@ -53,9 +54,9 @@ graph LR
 
 ---
 
-## ⚙️ Configuration (`flyer-config.json`)
+## <img src="https://cdn.jsdelivr.net/npm/@tabler/icons/icons/settings.svg" width="24" height="24" align="top" alt="Settings Icon" /> Configuration (`flyer-config.json`)
 
-### 🎨 Colors
+### <img src="https://cdn.jsdelivr.net/npm/@tabler/icons/icons/palette.svg" width="20" height="20" align="top" alt="Palette Icon" /> Colors
 
 Define your brand's color palette here. The engine uses these values to generate CSS variables.
 
@@ -85,7 +86,7 @@ Define your brand's color palette here. The engine uses these values to generate
 }
 ```
 
-### 📐 Format & Orientation
+### <img src="https://cdn.jsdelivr.net/npm/@tabler/icons/icons/ruler.svg" width="20" height="20" align="top" alt="Ruler Icon" /> Format & Orientation
 
 Control the physical dimensions of the flyer.
 
@@ -105,7 +106,7 @@ Control the physical dimensions of the flyer.
 }
 ```
 
-### 📄 Layout
+### <img src="https://cdn.jsdelivr.net/npm/@tabler/icons/icons/file.svg" width="20" height="20" align="top" alt="File Icon" /> Layout
 
 Choose how the panels are arranged.
 
@@ -126,7 +127,7 @@ Choose how the panels are arranged.
 }
 ```
 
-### 📝 Panel Content
+### <img src="https://cdn.jsdelivr.net/npm/@tabler/icons/icons/pencil.svg" width="20" height="20" align="top" alt="Pencil Icon" /> Panel Content
 
 Content for each panel is defined here. The number of required panels depends on your selected `layout`.
 
@@ -152,7 +153,7 @@ Content for each panel is defined here. The number of required panels depends on
 
 ---
 
-## 🧩 Available CSS Utility Classes
+## <img src="https://cdn.jsdelivr.net/npm/@tabler/icons/icons/puzzle.svg" width="24" height="24" align="top" alt="Puzzle Icon" /> Available CSS Utility Classes
 
 Use these classes in the `body` field of your panels for quick styling:
 
@@ -174,7 +175,7 @@ Use these classes in the `body` field of your panels for quick styling:
 
 ---
 
-## 🤖 AI Usage
+## <img src="https://cdn.jsdelivr.net/npm/@tabler/icons/icons/robot.svg" width="24" height="24" align="top" alt="Robot Icon" /> AI Usage
 
 This template is designed for AI-powered flyer generation:
 
@@ -195,7 +196,7 @@ Update flyer-config.json accordingly.
 
 ---
 
-## 🖨️ Printing
+## <img src="https://cdn.jsdelivr.net/npm/@tabler/icons/icons/printer.svg" width="24" height="24" align="top" alt="Printer Icon" /> Printing
 
 1. Open `template.html` in browser
 2. Press `Ctrl+P` or click **PRINT FLYER**
@@ -205,7 +206,7 @@ Update flyer-config.json accordingly.
 
 ---
 
-## 📁 Project Structure
+## <img src="https://cdn.jsdelivr.net/npm/@tabler/icons/icons/folder.svg" width="24" height="24" align="top" alt="Folder Icon" /> Project Structure
 
 ```text
 FlyerDesigner/
@@ -218,6 +219,6 @@ FlyerDesigner/
 
 ---
 
-## 📜 License
+## <img src="https://cdn.jsdelivr.net/npm/@tabler/icons/icons/license.svg" width="24" height="24" align="top" alt="License Icon" /> License
 
 MIT — Feel free to fork, modify, and use for your projects.
