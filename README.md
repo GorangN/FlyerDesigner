@@ -1,5 +1,5 @@
 <!-- markdownlint-disable MD033 -->
-# <img src="https://api.iconify.design/tabler:palette.svg?color=%2364748B" width="32" height="32" align="top" alt="Palette Icon" /> Flyer Designer – AI-Ready Template System
+# <img src="https://api.iconify.design/tabler:palette.svg?color=%2364748B" width="40" height="40" align="top" alt="Palette Icon" /> Flyer Designer – AI-Ready Template System
 
 > **Fork this project** and create stunning print flyers powered by AI. Just edit one JSON file — colors, format, layout — and let AI fill in the content.
 
@@ -7,7 +7,7 @@
 
 ---
 
-## <img src="https://api.iconify.design/tabler:sparkles.svg?color=%2364748B" width="24" height="24" align="top" alt="Sparkles Icon" /> Features
+## <img src="https://api.iconify.design/tabler:sparkles.svg?color=%2364748B" width="32" height="32" align="top" alt="Sparkles Icon" /> Features
 
 - <img src="https://api.iconify.design/tabler:palette.svg?color=%2364748B" width="20" height="20" align="top" alt="Palette Icon" /> **JSON-driven design** — Colors, fonts, branding all in one config file
 - <img src="https://api.iconify.design/tabler:ruler.svg?color=%2364748B" width="20" height="20" align="top" alt="Ruler Icon" /> **Multiple formats** — A5 (148×210mm) and A6 (105×148mm), portrait or landscape
@@ -18,7 +18,7 @@
 
 ---
 
-## <img src="https://api.iconify.design/tabler:rocket.svg?color=%2364748B" width="24" height="24" align="top" alt="Rocket Icon" /> Quick Start
+## <img src="https://api.iconify.design/tabler:rocket.svg?color=%2364748B" width="32" height="32" align="top" alt="Rocket Icon" /> Quick Start
 
 ```bash
 # 1. Fork & clone
@@ -35,7 +35,7 @@ Open `http://localhost:3000/template.html` and you'll see your empty flyer templ
 
 ---
 
-## <img src="https://api.iconify.design/tabler:sitemap.svg?color=%2364748B" width="24" height="24" align="top" alt="Sitemap Icon" /> Architecture
+## <img src="https://api.iconify.design/tabler:sitemap.svg?color=%2364748B" width="32" height="32" align="top" alt="Sitemap Icon" /> Architecture
 
 ```mermaid
 graph LR
@@ -54,9 +54,9 @@ graph LR
 
 ---
 
-## <img src="https://api.iconify.design/tabler:settings.svg?color=%2364748B" width="24" height="24" align="top" alt="Settings Icon" /> Configuration (`flyer-config.json`)
+## <img src="https://api.iconify.design/tabler:settings.svg?color=%2364748B" width="32" height="32" align="top" alt="Settings Icon" /> Configuration (`flyer-config.json`)
 
-### <img src="https://api.iconify.design/tabler:palette.svg?color=%2364748B" width="20" height="20" align="top" alt="Palette Icon" /> Colors
+### <img src="https://api.iconify.design/tabler:palette.svg?color=%2364748B" width="24" height="24" align="top" alt="Palette Icon" /> Colors
 
 Define your brand's color palette here. The engine uses these values to generate CSS variables.
 
@@ -86,7 +86,7 @@ Define your brand's color palette here. The engine uses these values to generate
 }
 ```
 
-### <img src="https://api.iconify.design/tabler:ruler.svg?color=%2364748B" width="20" height="20" align="top" alt="Ruler Icon" /> Format & Orientation
+### <img src="https://api.iconify.design/tabler:ruler.svg?color=%2364748B" width="24" height="24" align="top" alt="Ruler Icon" /> Format & Orientation
 
 Control the physical dimensions of the flyer.
 
@@ -106,7 +106,7 @@ Control the physical dimensions of the flyer.
 }
 ```
 
-### <img src="https://api.iconify.design/tabler:file.svg?color=%2364748B" width="20" height="20" align="top" alt="File Icon" /> Layout
+### <img src="https://api.iconify.design/tabler:file.svg?color=%2364748B" width="24" height="24" align="top" alt="File Icon" /> Layout
 
 Choose how the panels are arranged.
 
@@ -127,7 +127,7 @@ Choose how the panels are arranged.
 }
 ```
 
-### <img src="https://api.iconify.design/tabler:pencil.svg?color=%2364748B" width="20" height="20" align="top" alt="Pencil Icon" /> Panel Content
+### <img src="https://api.iconify.design/tabler:pencil.svg?color=%2364748B" width="24" height="24" align="top" alt="Pencil Icon" /> Panel Content
 
 Content for each panel is defined here. The number of required panels depends on your selected `layout`.
 
@@ -153,7 +153,7 @@ Content for each panel is defined here. The number of required panels depends on
 
 ---
 
-## <img src="https://api.iconify.design/tabler:puzzle.svg?color=%2364748B" width="24" height="24" align="top" alt="Puzzle Icon" /> Available CSS Utility Classes
+## <img src="https://api.iconify.design/tabler:puzzle.svg?color=%2364748B" width="32" height="32" align="top" alt="Puzzle Icon" /> Available CSS Utility Classes
 
 Use these classes in the `body` field of your panels for quick styling:
 
@@ -175,7 +175,7 @@ Use these classes in the `body` field of your panels for quick styling:
 
 ---
 
-## <img src="https://api.iconify.design/tabler:robot.svg?color=%2364748B" width="24" height="24" align="top" alt="Robot Icon" /> AI Usage
+## <img src="https://api.iconify.design/tabler:robot.svg?color=%2364748B" width="32" height="32" align="top" alt="Robot Icon" /> AI Usage
 
 This template is designed for AI-powered flyer generation:
 
@@ -196,7 +196,7 @@ Update flyer-config.json accordingly.
 
 ---
 
-## <img src="https://api.iconify.design/tabler:printer.svg?color=%2364748B" width="24" height="24" align="top" alt="Printer Icon" /> Printing
+## <img src="https://api.iconify.design/tabler:printer.svg?color=%2364748B" width="32" height="32" align="top" alt="Printer Icon" /> Printing
 
 1. Open `template.html` in browser
 2. Press `Ctrl+P` or click **PRINT FLYER**
@@ -206,7 +206,7 @@ Update flyer-config.json accordingly.
 
 ---
 
-## <img src="https://api.iconify.design/tabler:folder.svg?color=%2364748B" width="24" height="24" align="top" alt="Folder Icon" /> Project Structure
+## <img src="https://api.iconify.design/tabler:folder.svg?color=%2364748B" width="32" height="32" align="top" alt="Folder Icon" /> Project Structure
 
 ```text
 FlyerDesigner/
@@ -219,6 +219,6 @@ FlyerDesigner/
 
 ---
 
-## <img src="https://api.iconify.design/tabler:license.svg?color=%2364748B" width="24" height="24" align="top" alt="License Icon" /> License
+## <img src="https://api.iconify.design/tabler:license.svg?color=%2364748B" width="32" height="32" align="top" alt="License Icon" /> License
 
 MIT — Feel free to fork, modify, and use for your projects.
