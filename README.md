@@ -3,7 +3,11 @@
 
 > **Fork this project** and create stunning print flyers powered by AI. Just edit one JSON file — colors, format, layout — and let AI fill in the content.
 
-[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://github.com/GorangN/FlyerDesigner/blob/main/LICENSE)
+<p align="center">
+  <a href="https://github.com/GorangN/FlyerDesigner/blob/main/LICENSE">
+    <img src="https://img.shields.io/badge/License-MIT-yellow.svg" alt="License: MIT">
+  </a>
+</p>
 
 ---
 
