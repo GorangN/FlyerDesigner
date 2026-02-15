@@ -1,0 +1,5 @@
+{
+  "name": "FlyerDesigner",
+  "description": "The developer-first approach to print design. Edit one config file, let AI generate the content, and export production-ready A5/A6 PDFs.",
+  "requestFramePermissions": []
+}
