@@ -7,6 +7,14 @@
   <a href="https://github.com/GorangN/FlyerDesigner/blob/main/LICENSE">
     <img src="https://img.shields.io/badge/License-MIT-yellow.svg" alt="License: MIT">
   </a>
+  &nbsp;
+  <a href="https://github.com/GorangN/FlyerDesigner/releases">
+    <img src="https://img.shields.io/badge/Version-1.0.0-blue.svg" alt="Version">
+  </a>
+      &nbsp;
+  <a href="https://github.com/GorangN/FlyerDesigner">
+    <img src="https://img.shields.io/badge/github-repo-blue?logo=github" alt="OFFICIAL WIKI">
+  </a>
 </p>
 
 ---
