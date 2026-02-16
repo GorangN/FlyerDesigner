@@ -1,51 +1,76 @@
 <!DOCTYPE html>
 <html lang="en" class="scroll-smooth">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>FlyerDesigner | Developer-First Print Design</title>
-    <meta name="description" content="The developer-first approach to print design. Edit one config file, let AI generate the content, and export production-ready PDFs." />
 
-    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-    <script>
-      tailwind.config = {
-        theme: {
-          extend: {
-            fontFamily: {
-              sans: ['Inter', 'sans-serif'],
-            },
-            colors: {
-              zinc: {
-                950: '#09090b',
-              }
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>FlyerDesigner | Developer-First Print Design</title>
+  <link rel="canonical" href="https://GorangN.github.io/FlyerDesigner/" />
+  <link rel="icon" type="image/svg+xml" href="favicon.svg" />
+  <meta name="description"
+    content="The developer-first approach to print design. Edit one config file, let AI generate the content, and export production-ready PDFs." />
+  <meta name="keywords"
+    content="flyer design, print design, developer tools, react, tailwind css, pdf generation, flyer generator" />
+  <meta name="author" content="GorangN" />
+
+  <!-- Open Graph / Facebook -->
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://GorangN.github.io/FlyerDesigner/" />
+  <meta property="og:title" content="FlyerDesigner | Developer-First Print Design" />
+  <meta property="og:description"
+    content="The developer-first approach to print design. Edit one config file, let AI generate the content, and export production-ready PDFs." />
+  <meta property="og:image" content="https://GorangN.github.io/FlyerDesigner/og-image.png" />
+
+  <!-- Twitter -->
+  <meta property="twitter:card" content="summary_large_image" />
+  <meta property="twitter:url" content="https://GorangN.github.io/FlyerDesigner/" />
+  <meta property="twitter:title" content="FlyerDesigner | Developer-First Print Design" />
+  <meta property="twitter:description"
+    content="The developer-first approach to print design. Edit one config file, let AI generate the content, and export production-ready PDFs." />
+  <meta property="twitter:image" content="https://GorangN.github.io/FlyerDesigner/og-image.png" />
+
+  <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: {
+            sans: ['Inter', 'sans-serif'],
+          },
+          colors: {
+            zinc: {
+              950: '#09090b',
             }
           }
         }
       }
-    </script>
-    <style>
-      body {
-        font-family: 'Inter', sans-serif;
-        background-color: #09090b;
-        color: #a1a1aa;
-        margin: 0;
-      }
-      .glass-card {
-        background: rgba(24, 24, 27, 0.5);
-        backdrop-filter: blur(12px);
-        -webkit-backdrop-filter: blur(12px);
-        border: 1px solid rgba(255, 255, 255, 0.1);
-      }
-      .gradient-bg-radial {
-        background: radial-gradient(circle at 50% -20%, rgba(59, 130, 246, 0.1) 0%, rgba(9, 9, 11, 0) 50%),
-                    radial-gradient(circle at 0% 100%, rgba(139, 92, 246, 0.05) 0%, rgba(9, 9, 11, 0) 40%);
-      }
-    </style>
+    }
+  </script>
+  <style>
+    body {
+      font-family: 'Inter', sans-serif;
+      background-color: #09090b;
+      color: #a1a1aa;
+      margin: 0;
+    }
+
+    .glass-card {
+      background: rgba(24, 24, 27, 0.5);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      border: 1px solid rgba(255, 255, 255, 0.1);
+    }
+
+    .gradient-bg-radial {
+      background: radial-gradient(circle at 50% -20%, rgba(59, 130, 246, 0.1) 0%, rgba(9, 9, 11, 0) 50%),
+        radial-gradient(circle at 0% 100%, rgba(139, 92, 246, 0.05) 0%, rgba(9, 9, 11, 0) 40%);
+    }
+  </style>
   <link rel="stylesheet" href="/index.css">
-    <script type="importmap">
+  <script type="importmap">
     {
       "imports": {
         "react-dom/": "https://esm.sh/react-dom@^19.2.4/",
@@ -57,7 +82,9 @@
     </script>
   <script type="module" crossorigin src="/FlyerDesigner/assets/index-bssa3-D2.js"></script>
 </head>
-  <body>
-    <div id="root"></div>
+
+<body>
+  <div id="root"></div>
 </body>
+
 </html>
