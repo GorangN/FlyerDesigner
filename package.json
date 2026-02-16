@@ -6,7 +6,7 @@
   "homepage": "https://GorangN.github.io/FlyerDesigner",
   "scripts": {
     "predeploy": "npm run build",
-    "deploy": "gh-pages -d dist",
+    "deploy": "gh-pages -d dist -b pages",
     "dev": "vite",
     "build": "vite build",
     "preview": "vite preview"
