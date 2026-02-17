@@ -4,15 +4,15 @@
     "description": "FlyerDesigner Premium No-Blue Typography"
   },
   "colors": {
-    "primary": "#FFFFFF",
-    "primaryText": "#09090B",
-    "secondary": "#18181B",
-    "secondaryText": "#F4F4F5",
-    "background": "#09090B",
+    "primary": "#C6F135",
+    "primaryText": "#000000",
+    "secondary": "#09090B",
+    "secondaryText": "#FFFFFF",
+    "background": "#080808",
     "textMain": "#FFFFFF",
     "textMuted": "#A1A1AA",
-    "accent": "#3B82F6",
-    "border": "#27272A"
+    "accent": "#C6F135",
+    "border": "rgba(255,255,255,0.05)"
   },
   "format": {
     "active": "A6",
@@ -65,15 +65,15 @@
       "role": "cover",
       "heading": "FlyerDesigner",
       "subheading": "PRINT REINVENTED",
-      "body": "<div class='flex flex-col items-center justify-center p-4'><h1 class='text-4xl font-black text-white italic tracking-tighter mb-2'>Print-Ready.</h1><p class='text-secondary-text text-lg font-mono mb-8 uppercase tracking-widest'>Powered by JSON.</p><div class='glass-card p-6 rounded-3xl border-white/10 w-full'><div class='flex items-center gap-3 mb-3'><div class='icon-box bg-accent/20 text-accent'><i class='ti ti-cpu text-xl'></i></div><h3 class='font-bold uppercase tracking-wider text-sm text-white'>All-Native Engine</h3></div><p class='text-xs text-secondary-text leading-relaxed'>No more fighting layout shifts. Our JSON-to-DOM engine produces pixel-perfect PDF exports every time.</p></div></div>",
+      "body": "<div class='flex flex-col items-center justify-center p-2 text-center'><div class='inline-flex items-center gap-2 px-3 py-1 bg-white/5 border border-white/10 rounded-full mb-6'><i class='ti ti-bolt text-[10px] text-brand-primary'></i><span class='text-[8px] font-bold text-brand-primary uppercase tracking-tighter'>Flyer Template Production</span></div><h1 class='text-4xl font-black text-white leading-[0.9] tracking-tighter mb-4'>Design 5x faster<br><span class='opacity-50'>with logic.</span></h1><p class='text-[9px] text-white/60 mb-8 max-w-[180px] mx-auto leading-relaxed'>Define your layout once. Generate variations instantly. Save 20+ hours every month.</p><div class='bg-brand-primary text-black px-6 py-2.5 rounded-full font-bold text-[10px] flex items-center gap-2 mb-10 shadow-[0_0_30px_rgba(198,241,53,0.3)]'>Try it now <i class='ti ti-cpu text-lg'></i></div><div class='glass-card p-4 rounded-2xl border-white/5 bg-white/5 w-full text-left overflow-hidden relative'><div class='absolute top-0 left-0 w-full h-[1px] bg-gradient-to-r from-transparent via-brand-primary/50 to-transparent'></div><div class='flex justify-between items-end mb-2'><div class='space-y-1'><p class='text-[7px] font-mono text-white/30 uppercase'>Manual Layout</p><div class='w-32 h-1.5 bg-white/10 rounded-full overflow-hidden'><div class='h-full bg-white/30 w-[40%]'></div></div></div><p class='text-[7px] font-mono text-white/30'>TOO SLOW</p></div><div class='flex justify-between items-end'><div class='space-y-1'><p class='text-[7px] font-mono text-brand-primary uppercase'>FlyerDesigner AI</p><div class='w-32 h-2.5 bg-white/10 rounded-full overflow-hidden'><div class='h-full bg-brand-primary w-full shadow-[0_0_15px_rgba(198,241,53,0.5)]'></div></div></div><p class='text-[7px] font-mono text-brand-primary'>LIGHTNING FAST</p></div></div></div>",
       "footer": "v1.2.0 • PRODUCTION READY"
     },
     "2": {
       "role": "back",
-      "heading": "Architecture",
-      "subheading": "BEYOND TEMPLATES",
-      "body": "<div class='space-y-4'><div class='glass-card p-4 rounded-2xl'><div class='card-header text-[10px] text-secondary-text opacity-50 mb-2'>01 / JSON-DRIVEN</div><p class='text-xs text-white'>Define your logic, colors, and content in one place. Scale your design production with AI or automation.</p></div><div class='glass-card p-4 rounded-2xl'><div class='card-header text-[10px] text-secondary-text opacity-50 mb-2'>02 / WYSIWYG</div><p class='text-xs text-secondary-text'>What you see in the browser is exactly what hits the press. Professional CMYK-ready output.</p></div><div class='cta-block mt-6 glass-card border-accent/20'><p class='text-[10px] font-mono mb-2 uppercase tracking-tight text-white'>Visit Documentation</p><p class='text-secondary-text text-[9px]'>gorangn.github.io/FlyerDesigner</p></div></div>",
-      "footer": "© 2026 GorangN. Open Source under MIT."
+      "heading": "Efficiency",
+      "subheading": "RECLAIM YOUR TIME",
+      "body": "<div class='space-y-4'><div class='glass-card p-4 rounded-2xl border-white/5 bg-white/5 flex gap-4'><div class='text-4xl font-black text-white'>5<span class='text-brand-primary italic'>x</span></div><div class='space-y-1'><p class='text-[8px] font-bold text-white uppercase tracking-wider'>FASTER</p><p class='text-[7px] text-white/50 leading-tight'>Save ~20 hours/month by using programmatic layouts.</p></div></div><div class='glass-card p-4 rounded-2xl border-white/5 bg-white/5'><div class='flex items-center gap-3 mb-2'><div class='w-8 h-8 rounded-lg bg-brand-primary/10 flex items-center justify-center text-brand-primary'><i class='ti ti-cpu text-lg'></i></div><p class='text-[9px] font-bold text-white uppercase'>Pure Performance</p></div><p class='text-[8px] text-white/50'>Our engine is built for speed and reliability, delivering high-resolution output every time.</p></div><div class='p-4 border border-brand-primary/20 bg-brand-primary/5 rounded-2xl text-center'><p class='text-brand-primary text-[10px] font-bold mb-1'>Join 50,000+ users today</p><p class='text-white/40 text-[7px] italic'>gorangn.github.io/FlyerDesigner</p></div></div>",
+      "footer": "© 2026 FlyerDesigner. Reclaim your time."
     }
   }
 }
