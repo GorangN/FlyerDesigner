@@ -49,10 +49,103 @@
 </head>
 
 <body class="font-display">
+    <!-- Config Sidebar -->
+    <aside id="config-sidebar" class="config-sidebar no-print">
+        <button id="sidebar-toggle" class="sidebar-toggle">
+            <i class="ti ti-settings"></i>
+        </button>
+        <div class="sidebar-content">
+            <div class="sidebar-header">
+                <h2 class="text-white font-black tracking-tighter text-xl">FlyerDesigner</h2>
+                <p class="text-zinc-500 text-[10px] uppercase tracking-widest font-mono">Config Manager</p>
+            </div>
+
+            <div class="mt-8 space-y-6">
+                <div class="config-group">
+                    <label class="text-[10px] text-zinc-400 font-bold uppercase mb-2 block">Preset Designs</label>
+                    <select id="config-selector" class="config-select">
+                        <!-- Populated dynamically by engine -->
+                    </select>
+                </div>
+
+                <hr class="border-white/5">
+
+                <!-- Appearance -->
+                <div class="space-y-4">
+                    <h3 class="text-[11px] text-white font-black uppercase tracking-widest">Appearance</h3>
+                    <div class="grid grid-cols-2 gap-3">
+                        <div>
+                            <label class="text-[9px] text-zinc-500 uppercase block mb-1">Brand Primary</label>
+                            <input type="color" id="edit-color-primary"
+                                class="w-full h-8 bg-transparent cursor-pointer">
+                        </div>
+                        <div>
+                            <label class="text-[9px] text-zinc-500 uppercase block mb-1">Main Text</label>
+                            <input type="color" id="edit-color-secondary"
+                                class="w-full h-8 bg-transparent cursor-pointer">
+                        </div>
+                        <div>
+                            <label class="text-[9px] text-zinc-500 uppercase block mb-1">Brand Accent</label>
+                            <input type="color" id="edit-color-accent" class="w-full h-8 bg-transparent cursor-pointer">
+                        </div>
+                        <div>
+                            <label class="text-[9px] text-zinc-500 uppercase block mb-1">Background</label>
+                            <input type="color" id="edit-color-bg" class="w-full h-8 bg-transparent cursor-pointer">
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Document -->
+                <div class="space-y-4">
+                    <h3 class="text-[11px] text-white font-black uppercase tracking-widest">Document</h3>
+                    <div class="space-y-3">
+                        <div>
+                            <label class="text-[9px] text-zinc-500 uppercase block mb-1">Format</label>
+                            <select id="edit-format" class="config-select">
+                                <option value="A6">A6 (Standard)</option>
+                                <option value="A5">A5 (Large)</option>
+                            </select>
+                        </div>
+                        <div>
+                            <label class="text-[9px] text-zinc-500 uppercase block mb-1">Orientation</label>
+                            <select id="edit-orientation" class="config-select">
+                                <option value="portrait">Portrait</option>
+                                <option value="landscape">Landscape</option>
+                            </select>
+                        </div>
+                        <div>
+                            <label class="text-[9px] text-zinc-500 uppercase block mb-1">Layout</label>
+                            <select id="edit-layout" class="config-select">
+                                <option value="simple">Front + Back</option>
+                                <option value="2-fold">2-Fold</option>
+                                <option value="3-fold">3-Fold</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Branding -->
+                <div class="space-y-4">
+                    <h3 class="text-[11px] text-white font-black uppercase tracking-widest">Branding</h3>
+                    <div class="space-y-3">
+                        <div>
+                            <label class="text-[9px] text-zinc-500 uppercase block mb-1">Company Name</label>
+                            <input type="text" id="edit-company-name" class="config-input w-full"
+                                placeholder="Company Name">
+                        </div>
+                        <div>
+                            <label class="text-[9px] text-zinc-500 uppercase block mb-1">Slogan</label>
+                            <input type="text" id="edit-slogan" class="config-input w-full" placeholder="Slogan">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </aside>
 
     <!-- Print-Button -->
     <button onclick="window.print()"
-        class="print-btn fixed top-6 right-6 z-50 bg-primary text-white font-black px-8 py-4 rounded-full hover:scale-105 transition-transform">
+        class="print-btn fixed top-6 right-6 z-50 bg-zinc-950 text-white font-black px-8 py-4 rounded-full border border-white/10 shadow-2xl hover:scale-105 transition-transform active:scale-95">
         PRINT FLYER
     </button>
 
