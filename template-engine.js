@@ -206,7 +206,7 @@ class FlyerEngine {
         // Dynamic @page stylesheet
         const pageStyle = document.getElementById('dynamic-page-style');
         if (pageStyle) {
-            pageStyle.textContent = `@page { size: ${spreadWidthMM}mm ${h}; margin: 0; }`;
+            pageStyle.textContent = `@page { size: ${w} ${h}; margin: 0; }`;
         }
     }
 
