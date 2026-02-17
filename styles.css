@@ -25,6 +25,8 @@ body {
     flex-direction: column;
     align-items: center;
     gap: 60px;
+    zoom: 1.1;
+    /* More conservative scaling */
 }
 
 /* Spread = mehrere Panels nebeneinander (physisches Blatt) */
@@ -37,6 +39,19 @@ body {
     background: white;
 }
 
+.spread--gap {
+    gap: 40px;
+    /* Space between Front and Back */
+    border: none;
+    background: transparent;
+    overflow: visible;
+}
+
+.spread--gap .panel {
+    border-radius: 2rem;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+}
+
 /* Einzelnes Panel */
 .panel {
     width: var(--page-width, 105mm);
@@ -44,6 +59,7 @@ body {
     flex-shrink: 0;
     position: relative;
     background: var(--color-background, white);
+    color: var(--color-text-main, #050505);
     overflow: hidden;
 }
 
@@ -60,11 +76,12 @@ body {
 .fold-line {
     position: absolute;
     right: 0;
-    top: 20mm;
-    bottom: 20mm;
-    width: 1px;
-    border-right: 1px dashed rgba(0, 0, 0, 0.08);
-    z-index: 10;
+    top: 0;
+    bottom: 0;
+    width: 2px;
+    border-right: 2px dashed rgba(255, 255, 255, 0.2);
+    z-index: 50;
+    pointer-events: none;
 }
 
 /* ── Rausch-Textur ───────────────────────────────── */
@@ -115,6 +132,14 @@ body {
 .card--soft {
     background-color: color-mix(in srgb, var(--color-primary) 5%, white);
     border: 1px solid color-mix(in srgb, var(--color-primary) 10%, white);
+}
+
+.glass-card {
+    background: rgba(255, 255, 255, 0.05) !important;
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
 }
 
 /* ── Headers ──────────────────────────────────────── */
@@ -239,29 +264,50 @@ body {
 
     body,
     html {
-        background: none;
+        background: var(--color-background, #09090b) !important;
         padding: 0;
         margin: 0;
-        display: block;
         width: 100%;
         height: 100%;
+        -webkit-print-color-adjust: exact !important;
+        print-color-adjust: exact !important;
+    }
+
+    body {
+        display: block;
+    }
+
+    #flyer-container {
+        padding: 0 !important;
+        margin: 0 !important;
     }
 
     .spread {
-        display: block;
+        display: flex !important;
+        flex-direction: row !important;
         width: 100% !important;
-        height: auto !important;
+        height: 100% !important;
         box-shadow: none;
         border-radius: 0;
         border: none;
         margin: 0;
+        break-after: page !important;
+        background: var(--color-background) !important;
+        gap: 0 !important;
+        /* No gaps in print */
     }
 
     .panel {
-        width: 100% !important;
+        width: auto !important;
+        flex: 1 !important;
         height: 100% !important;
-        break-after: page !important;
         border: none !important;
+        background: var(--color-background) !important;
+    }
+
+    .panel::before {
+        display: none !important;
+        /* Remove texture for cleaner print */
     }
 
     .section-label,

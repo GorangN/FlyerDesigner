@@ -1,18 +1,18 @@
 {
   "meta": {
-    "version": "1.0",
-    "description": "Flyer Template Configuration – read by template-engine.js"
+    "version": "1.2",
+    "description": "FlyerDesigner Premium No-Blue Typography"
   },
   "colors": {
-    "primary": "#FFC700",
-    "primaryText": "#050505",
-    "secondary": "#050505",
-    "secondaryText": "#FCFCFC",
-    "background": "#FCFCFC",
-    "textMain": "#050505",
-    "textMuted": "#64748B",
-    "accent": "#FFC700",
-    "border": "#E2E8F0"
+    "primary": "#FFFFFF",
+    "primaryText": "#09090B",
+    "secondary": "#18181B",
+    "secondaryText": "#F4F4F5",
+    "background": "#09090B",
+    "textMain": "#FFFFFF",
+    "textMuted": "#A1A1AA",
+    "accent": "#3B82F6",
+    "border": "#27272A"
   },
   "format": {
     "active": "A6",
@@ -32,7 +32,7 @@
     "active": "simple",
     "options": {
       "simple": {
-        "label": "Simple Greeting Card",
+        "label": "Front + Back",
         "panels": 2,
         "description": "Front + Back"
       },
@@ -54,50 +54,26 @@
     "mono": "'JetBrains Mono', monospace"
   },
   "branding": {
-    "companyName": "",
-    "slogan": "",
-    "website": "",
-    "email": "",
+    "companyName": "FlyerDesigner",
+    "slogan": "The Developer-First Print Design Engine",
+    "website": "gorangn.github.io/FlyerDesigner",
+    "email": "hello@flyerdesigner.dev",
     "phone": ""
   },
   "panels": {
     "1": {
       "role": "cover",
-      "heading": "",
-      "subheading": "",
-      "body": "",
-      "footer": ""
+      "heading": "FlyerDesigner",
+      "subheading": "PRINT REINVENTED",
+      "body": "<div class='flex flex-col items-center justify-center p-4'><h1 class='text-4xl font-black text-white italic tracking-tighter mb-2'>Print-Ready.</h1><p class='text-secondary-text text-lg font-mono mb-8 uppercase tracking-widest'>Powered by JSON.</p><div class='glass-card p-6 rounded-3xl border-white/10 w-full'><div class='flex items-center gap-3 mb-3'><div class='icon-box bg-accent/20 text-accent'><i class='ti ti-cpu text-xl'></i></div><h3 class='font-bold uppercase tracking-wider text-sm text-white'>All-Native Engine</h3></div><p class='text-xs text-secondary-text leading-relaxed'>No more fighting layout shifts. Our JSON-to-DOM engine produces pixel-perfect PDF exports every time.</p></div></div>",
+      "footer": "v1.2.0 • PRODUCTION READY"
     },
     "2": {
       "role": "back",
-      "heading": "",
-      "subheading": "",
-      "body": "",
-      "footer": ""
-    },
-    "3": {
-      "role": "inner-left",
-      "heading": "",
-      "body": "",
-      "footer": ""
-    },
-    "4": {
-      "role": "inner-right",
-      "heading": "",
-      "body": "",
-      "footer": ""
-    },
-    "5": {
-      "role": "inner-center-left",
-      "heading": "",
-      "body": "",
-      "footer": ""
-    },
-    "6": {
-      "role": "inner-center-right",
-      "heading": "",
-      "body": "",
-      "footer": ""
+      "heading": "Architecture",
+      "subheading": "BEYOND TEMPLATES",
+      "body": "<div class='space-y-4'><div class='glass-card p-4 rounded-2xl'><div class='card-header text-[10px] text-secondary-text opacity-50 mb-2'>01 / JSON-DRIVEN</div><p class='text-xs text-white'>Define your logic, colors, and content in one place. Scale your design production with AI or automation.</p></div><div class='glass-card p-4 rounded-2xl'><div class='card-header text-[10px] text-secondary-text opacity-50 mb-2'>02 / WYSIWYG</div><p class='text-xs text-secondary-text'>What you see in the browser is exactly what hits the press. Professional CMYK-ready output.</p></div><div class='cta-block mt-6 glass-card border-accent/20'><p class='text-[10px] font-mono mb-2 uppercase tracking-tight text-white'>Visit Documentation</p><p class='text-secondary-text text-[9px]'>gorangn.github.io/FlyerDesigner</p></div></div>",
+      "footer": "© 2026 GorangN. Open Source under MIT."
     }
   }
 }

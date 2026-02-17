@@ -57,14 +57,14 @@ class FlyerEngine {
     /* ── Set Page Format (A5 / A6) + Orientation ─── */
     applyFormat() {
         const fmt = this.config.format;
+        const layoutKey = this.config.layout.active;
         const dims = fmt.options[fmt.active];
+
         if (!dims) {
             console.warn(`Format "${fmt.active}" not found, using A6.`);
             return;
         }
 
-        // Landscape: swap width and height
-        // "querformat" (German) or "landscape" (English)
         const isLandscape = fmt.orientation === 'landscape' || fmt.orientation === 'querformat';
         const w = isLandscape ? dims.height : dims.width;
         const h = isLandscape ? dims.width : dims.height;
@@ -73,10 +73,15 @@ class FlyerEngine {
         root.style.setProperty('--page-width', w);
         root.style.setProperty('--page-height', h);
 
+        // Spread Calculation for Printing
+        // 3-fold has 3 panels per spread, others have 2
+        const panelsPerSpread = layoutKey === '3-fold' || layoutKey === '3-falz' ? 3 : 2;
+        const spreadWidthMM = parseFloat(w) * panelsPerSpread;
+
         // Dynamic @page stylesheet
         const pageStyle = document.getElementById('dynamic-page-style');
         if (pageStyle) {
-            pageStyle.textContent = `@page { size: ${w} ${h}; margin: 0; }`;
+            pageStyle.textContent = `@page { size: ${spreadWidthMM}mm ${h}; margin: 0; }`;
         }
     }
 
@@ -103,16 +108,28 @@ class FlyerEngine {
         spreads.forEach((spreadPanels, spreadIdx) => {
             // Spread Label
             const label = document.createElement('div');
-            label.className = 'section-label mb-6 bg-primary/10 text-primary px-4 py-1 rounded-full text-xs font-black tracking-widest uppercase italic text-center no-print';
+            label.className = 'section-label mb-6 bg-slate-200 text-slate-600 px-4 py-1 rounded-full text-[10px] font-black tracking-widest uppercase italic text-center no-print';
             label.textContent = spreadPanels.label;
             container.appendChild(label);
 
+            // Fetch current physical dimensions (accounting for orientation)
+            const fmt = this.config.format;
+            const dims = fmt.options[fmt.active];
+            const isLandscape = fmt.orientation === 'landscape' || fmt.orientation === 'querformat';
+            const panelWidthMM = parseFloat(isLandscape ? dims.height : dims.width);
+
             // Spread Container
             const spreadDiv = document.createElement('div');
-            const spreadWidthMM = parseFloat(dims.width) * spreadPanels.panels.length;
+            const spreadWidthMM = panelWidthMM * spreadPanels.panels.length;
             spreadDiv.className = 'spread mx-auto mb-12';
+
+            // Layout specific spacing
+            if (layoutKey === 'simple' || layoutKey === 'einfach') {
+                spreadDiv.classList.add('spread--gap');
+            }
+
             spreadDiv.style.width = `${spreadWidthMM}mm`;
-            spreadDiv.style.height = dims.height;
+            spreadDiv.style.height = isLandscape ? dims.width : dims.height;
             if (spreadPanels.reverse) {
                 spreadDiv.style.flexDirection = 'row-reverse';
             }
@@ -122,8 +139,8 @@ class FlyerEngine {
                 const panelData = this.config.panels[String(panelIdx)] || {};
                 const panelEl = this.createPanel(panelIdx, panelData);
 
-                // Fold line between panels (not on the last one)
-                if (posInSpread < spreadPanels.panels.length - 1) {
+                // Fold line between panels (not on the last one, and not for simple layouts)
+                if (posInSpread < spreadPanels.panels.length - 1 && layoutKey !== 'simple' && layoutKey !== 'einfach') {
                     const foldLine = document.createElement('div');
                     foldLine.className = 'fold-line';
                     panelEl.appendChild(foldLine);
@@ -192,7 +209,7 @@ class FlyerEngine {
 
         if (data.subheading) {
             const sub = document.createElement('p');
-            sub.className = 'font-mono text-[8px] bg-secondary text-white inline-block px-2 py-1 mt-3 uppercase tracking-tight';
+            sub.className = 'font-mono text-[8px] border border-white/20 text-white inline-block px-2 py-1 mt-3 uppercase tracking-widest';
             sub.textContent = data.subheading;
             header.appendChild(sub);
         }
